@@ -1,0 +1,33 @@
+# One entry per public repository. Text mirrors the repository README.
+- name: endpoint-quorum
+  lang: PowerShell
+  area: Endpoint management
+  summary: Finds devices that Intune, Entra ID and Defender for Endpoint disagree about. Read-only; `Invoke-Quorum -Demo` runs offline.
+- name: secure-app-factory
+  lang: PowerShell
+  area: Endpoint management
+  summary: Pinned, reproducible Win32 packaging for Intune. SHA-256 and signer pins, PSAppDeployToolkit 4.1, `.intunewin`, CycloneDX SBOM and provenance.
+- name: logsieve
+  lang: Python
+  area: Endpoint management
+  summary: Puts ConfigMgr, Intune and Windows logs on one timeline, explains known error codes, and pseudonymises identifiers before sharing.
+- name: grundschutz-check
+  lang: PowerShell
+  area: Security and compliance
+  summary: Read-only Windows 11 checks against BSI IT-Grundschutz and Grundschutz++, with a cited evidence report.
+- name: certclock
+  lang: Python
+  area: Security and compliance
+  summary: Agentless certificate and CA expiry radar. TLS endpoints, files and internal CAs on one timeline, plus a CI gate.
+- name: patchorder
+  lang: Python
+  area: Security and compliance
+  summary: Which CVEs hit the versions you actually run, ranked with CISA KEV, EPSS and exposure. No scanning.
+- name: runbook-rehearsal
+  lang: Python
+  area: Operations and developer tooling
+  summary: Dry-runs runbooks and flags stale reviews, dead contacts, 404s, missing files and broken scripts, with a freshness score.
+- name: specfreeze
+  lang: Python
+  area: Operations and developer tooling
+  summary: Ask design questions first, freeze the interface contract, reject LLM-generated code that drifts from it.

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Description }}<p class="meta">{{ . }}</p>{{ end }}
+{{ .Content }}
+<ul class="post-list">
+  {{- range .Pages.ByDate.Reverse }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta">{{ .Date.Format "2 Jan 2006" }}</span>
+    <p class="summary">{{ .Description }}</p></li>
+  {{- else }}
+  <li>No posts yet.</li>
+  {{- end }}
+</ul>
+<p><a href="{{ "index.xml" | relURL }}">RSS feed</a></p>
+{{ end }}

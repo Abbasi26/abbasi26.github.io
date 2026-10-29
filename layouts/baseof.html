@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale | default "en" }}">
+<head>{{ partial "head.html" . }}</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+    <nav>
+      {{- range site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+      {{- end }}
+    </nav>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="site-footer">
+    <p>{{ site.Copyright }} · <a href="{{ site.Params.github }}">GitHub</a> · <a href="{{ "index.xml" | relURL }}">RSS</a></p>
+  </footer>
+</body>
+</html>

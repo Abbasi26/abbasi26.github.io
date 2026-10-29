@@ -1,0 +1,34 @@
+{{ define "main" }}
+<section class="intro">{{ .Content }}</section>
+<section class="projects">
+  <h2>Projects</h2>
+  {{- $areas := slice "Endpoint management" "Security and compliance" "Operations and developer tooling" }}
+  {{- range $areas }}
+  {{- $area := . }}
+  <h3>{{ $area }}</h3>
+  <table>
+    {{- range where hugo.Data.projects "area" $area }}
+    <tr>
+      <td><a href="https://github.com/Abbasi26/{{ .name }}"><strong>{{ .name }}</strong></a><br><span class="meta">{{ .lang }}</span></td>
+      <td>{{ .summary | markdownify }}</td>
+    </tr>
+    {{- end }}
+  </table>
+  {{- end }}
+</section>
+<section>
+  <h2>Writing</h2>
+  {{- $posts := where site.RegularPages "Section" "posts" }}
+  {{- with $posts }}
+  <ul class="post-list">
+    {{- range first 10 .ByDate.Reverse }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta">{{ .Date.Format "2 Jan 2006" }}</span>
+      <p class="summary">{{ .Description }}</p></li>
+    {{- end }}
+  </ul>
+  <p><a href="{{ "posts/" | relURL }}">All posts</a> · <a href="{{ "index.xml" | relURL }}">RSS</a></p>
+  {{- else }}
+  <p>First write-ups are on the way. Subscribe via <a href="{{ "index.xml" | relURL }}">RSS</a>.</p>
+  {{- end }}
+</section>
+{{ end }}

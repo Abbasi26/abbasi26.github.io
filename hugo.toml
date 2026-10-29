@@ -1,0 +1,48 @@
+baseURL = "https://abbasi26.github.io/"
+locale = "en"
+title = "Wasaf Abbasi"
+copyright = "© 2026 Wasaf Abbasi"
+enableRobotsTXT = true
+summaryLength = 40
+
+[params]
+  description = "Read-only-by-default tools for IT operations: endpoint state, certificates, patch priorities, runbooks, logs and AI-assisted coding. Write-ups and release notes."
+  author = "Wasaf Abbasi"
+  github = "https://github.com/Abbasi26"
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["html", "rss"]
+  section = ["html", "rss"]
+  taxonomy = ["html"]
+  term = ["html", "rss"]
+
+[services.rss]
+  limit = 50
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[markup.highlight]
+  noClasses = false
+  style = "github"
+
+[menus]
+  [[menus.main]]
+    name = "Projects"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "Writing"
+    pageRef = "/posts"
+    weight = 20
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 30
+  [[menus.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 40

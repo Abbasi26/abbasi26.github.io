@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  {{- if eq .Section "posts" }}
+  <p class="meta">{{ .Date.Format "2 January 2006" }} · {{ .ReadingTime }} min read{{ with .Params.repo }} · <a href="https://github.com/Abbasi26/{{ . }}">Abbasi26/{{ . }}</a>{{ end }}</p>
+  {{- end }}
+  {{- with .Params.image }}<img src="{{ . | relURL }}" alt="{{ $.Title }}">{{ end }}
+  {{ .Content }}
+  {{- with .GetTerms "tags" }}
+  <p class="tags">{{ range . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}</p>
+  {{- end }}
+</article>
+{{ end }}
