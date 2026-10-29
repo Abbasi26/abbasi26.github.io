@@ -1,7 +1,7 @@
 ---
 title: "specfreeze: decide the design first, freeze the interface, then let the model write code"
 date: 2026-10-29T08:35:00+01:00
-description: "A local Python CLI that asks design decisions as closed questions, freezes them as a signed interface contract, and rejects generated code and repairs that drift from it, plus a static verify gate for any later edit."
+description: "A local Python CLI that asks design decisions as closed questions, freezes them as a digest-protected interface contract, and rejects generated code and repairs that drift from it, plus a static verify gate for any later edit."
 tags: ["ai", "llm", "python", "testing", "code-generation"]
 repo: "specfreeze"
 image: "/images/specfreeze.png"
